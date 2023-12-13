@@ -1,0 +1,11 @@
+# ninja log v5
+437	2198	7238856396856958	CMakeFiles/multiplayer.dir/main.cpp.obj	6235d0f66a816f67
+4	77	0	G:/workspace-G/Cpp/multiPlayer/multiplayer/output/x64Debug/CMakeFiles/cmake.verify_globs	7e244f2e97fd0a53
+155	3056	7238865030180448	CMakeFiles/multiplayer.dir/mainwindow.cpp.obj	827fe55c1e1b393e
+84	151	7238865001134005	multiplayer_autogen/timestamp	cb71f4b3b152c03e
+84	151	7238865001134005	multiplayer_autogen/mocs_compilation.cpp	cb71f4b3b152c03e
+84	151	7238865001134005	G:/workspace-G/Cpp/multiPlayer/multiplayer/output/x64Debug/multiplayer_autogen/timestamp	cb71f4b3b152c03e
+436	2028	7238856395155410	CMakeFiles/multiplayer.dir/multiplayer_autogen/mocs_compilation.cpp.obj	8c97993240e6c253
+84	151	7238865001134005	G:/workspace-G/Cpp/multiPlayer/multiplayer/output/x64Debug/multiplayer_autogen/mocs_compilation.cpp	cb71f4b3b152c03e
+2836	3244	7238850639249368	multiplayer.exe	a8be7c39915c5473
+76	765	7238865132327825	build.ninja	7d943a984a4c251a

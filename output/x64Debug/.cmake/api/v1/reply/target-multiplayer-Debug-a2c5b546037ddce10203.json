@@ -1,0 +1,790 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "multiplayer.exe"
+		},
+		{
+			"path" : "multiplayer.pdb"
+		}
+	],
+	"backtrace" : 4,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"_qt_internal_create_executable",
+			"qt6_add_executable",
+			"qt_add_executable",
+			"install",
+			"target_link_directories",
+			"target_link_libraries",
+			"set_target_properties",
+			"include",
+			"find_package",
+			"find_dependency",
+			"_qt_internal_find_qt_dependencies",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"G:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake",
+			"CMakeLists.txt",
+			"G:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets.cmake",
+			"G:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake",
+			"G:/Qt/6.7.0/mingw_64/lib/cmake/Qt6/Qt6Config.cmake",
+			"G:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Core/Qt6CoreTargets.cmake",
+			"G:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake",
+			"C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeFindDependencyMacro.cmake",
+			"G:/Qt/6.7.0/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake",
+			"G:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake",
+			"G:/Qt/6.7.0/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets.cmake",
+			"G:/Qt/6.7.0/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfig.cmake",
+			"G:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake",
+			"G:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake",
+			"G:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 72,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 789,
+				"parent" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 575,
+				"parent" : 2
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 614,
+				"parent" : 3
+			},
+			{
+				"command" : 4,
+				"file" : 1,
+				"line" : 133,
+				"parent" : 0
+			},
+			{
+				"command" : 5,
+				"file" : 1,
+				"line" : 103,
+				"parent" : 0
+			},
+			{
+				"command" : 6,
+				"file" : 1,
+				"line" : 107,
+				"parent" : 0
+			},
+			{
+				"command" : 6,
+				"file" : 1,
+				"line" : 116,
+				"parent" : 0
+			},
+			{
+				"command" : 9,
+				"file" : 1,
+				"line" : 13,
+				"parent" : 0
+			},
+			{
+				"file" : 4,
+				"parent" : 9
+			},
+			{
+				"command" : 9,
+				"file" : 4,
+				"line" : 157,
+				"parent" : 10
+			},
+			{
+				"file" : 3,
+				"parent" : 11
+			},
+			{
+				"command" : 8,
+				"file" : 3,
+				"line" : 52,
+				"parent" : 12
+			},
+			{
+				"file" : 2,
+				"parent" : 13
+			},
+			{
+				"command" : 7,
+				"file" : 2,
+				"line" : 61,
+				"parent" : 14
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 576,
+				"parent" : 2
+			},
+			{
+				"command" : 8,
+				"file" : 3,
+				"line" : 40,
+				"parent" : 12
+			},
+			{
+				"file" : 9,
+				"parent" : 17
+			},
+			{
+				"command" : 11,
+				"file" : 9,
+				"line" : 39,
+				"parent" : 18
+			},
+			{
+				"command" : 10,
+				"file" : 8,
+				"line" : 111,
+				"parent" : 19
+			},
+			{
+				"command" : 9,
+				"file" : 7,
+				"line" : 76,
+				"parent" : 20
+			},
+			{
+				"file" : 6,
+				"parent" : 21
+			},
+			{
+				"command" : 8,
+				"file" : 6,
+				"line" : 53,
+				"parent" : 22
+			},
+			{
+				"file" : 5,
+				"parent" : 23
+			},
+			{
+				"command" : 7,
+				"file" : 5,
+				"line" : 61,
+				"parent" : 24
+			},
+			{
+				"command" : 8,
+				"file" : 6,
+				"line" : 41,
+				"parent" : 22
+			},
+			{
+				"file" : 12,
+				"parent" : 26
+			},
+			{
+				"command" : 11,
+				"file" : 12,
+				"line" : 39,
+				"parent" : 27
+			},
+			{
+				"command" : 10,
+				"file" : 8,
+				"line" : 111,
+				"parent" : 28
+			},
+			{
+				"command" : 9,
+				"file" : 7,
+				"line" : 76,
+				"parent" : 29
+			},
+			{
+				"file" : 11,
+				"parent" : 30
+			},
+			{
+				"command" : 8,
+				"file" : 11,
+				"line" : 52,
+				"parent" : 31
+			},
+			{
+				"file" : 10,
+				"parent" : 32
+			},
+			{
+				"command" : 7,
+				"file" : 10,
+				"line" : 61,
+				"parent" : 33
+			},
+			{
+				"command" : 7,
+				"file" : 10,
+				"line" : 76,
+				"parent" : 33
+			},
+			{
+				"command" : 10,
+				"file" : 8,
+				"line" : 111,
+				"parent" : 19
+			},
+			{
+				"command" : 9,
+				"file" : 7,
+				"line" : 76,
+				"parent" : 36
+			},
+			{
+				"file" : 14,
+				"parent" : 37
+			},
+			{
+				"command" : 8,
+				"file" : 14,
+				"line" : 52,
+				"parent" : 38
+			},
+			{
+				"file" : 13,
+				"parent" : 39
+			},
+			{
+				"command" : 7,
+				"file" : 13,
+				"line" : 61,
+				"parent" : 40
+			},
+			{
+				"command" : 12,
+				"file" : 1,
+				"line" : 98,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -std=gnu++17 -fdiagnostics-color=always"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 16,
+					"define" : "MINGW_HAS_SECURE_API=1"
+				},
+				{
+					"backtrace" : 16,
+					"define" : "QT_CORE_LIB"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "QT_GUI_LIB"
+				},
+				{
+					"backtrace" : 16,
+					"define" : "QT_NEEDS_QMAIN"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "QT_WIDGETS_LIB"
+				},
+				{
+					"backtrace" : 16,
+					"define" : "UNICODE"
+				},
+				{
+					"backtrace" : 16,
+					"define" : "WIN32"
+				},
+				{
+					"backtrace" : 16,
+					"define" : "WIN64"
+				},
+				{
+					"backtrace" : 16,
+					"define" : "_ENABLE_EXTENDED_ALIGNED_STORAGE"
+				},
+				{
+					"backtrace" : 16,
+					"define" : "_UNICODE"
+				},
+				{
+					"backtrace" : 16,
+					"define" : "_WIN64"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 0,
+					"path" : "G:/workspace-G/Cpp/multiPlayer/multiplayer/output/x64Debug/multiplayer_autogen/include"
+				},
+				{
+					"backtrace" : 42,
+					"isSystem" : true,
+					"path" : "G:/workspace-G/vcpkg/vcpkg/installed/x64-windows/include"
+				},
+				{
+					"backtrace" : 16,
+					"isSystem" : true,
+					"path" : "G:/Qt/6.7.0/mingw_64/include/QtCore"
+				},
+				{
+					"backtrace" : 16,
+					"isSystem" : true,
+					"path" : "G:/Qt/6.7.0/mingw_64/include"
+				},
+				{
+					"backtrace" : 16,
+					"isSystem" : true,
+					"path" : "G:/Qt/6.7.0/mingw_64/mkspecs/win32-g++"
+				},
+				{
+					"backtrace" : 8,
+					"isSystem" : true,
+					"path" : "G:/Qt/6.7.0/mingw_64/include/QtWidgets"
+				},
+				{
+					"backtrace" : 8,
+					"isSystem" : true,
+					"path" : "G:/Qt/6.7.0/mingw_64/include/QtGui"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					16,
+					16,
+					7
+				],
+				"standard" : "17"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"id" : "multiplayer_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "multiplayer_autogen::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "multiplayer::@6890427a1f51a3e7e1df",
+	"install" : 
+	{
+		"destinations" : 
+		[
+			{
+				"backtrace" : 5,
+				"path" : "bin"
+			}
+		],
+		"prefix" : 
+		{
+			"path" : "C:/Program Files (x86)/multiplayer"
+		}
+	},
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-g",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-mwindows",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "-LG:\\workspace-G\\vcpkg\\vcpkg\\installed\\x64-windows\\lib",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "-LG:\\workspace-G\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "-LG:\\workspace-G\\Cpp\\multiPlayer\\multiplayer\\opencv_calib3d",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "-LG:\\workspace-G\\Cpp\\multiPlayer\\multiplayer\\opencv_core",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "-LG:\\workspace-G\\Cpp\\multiPlayer\\multiplayer\\opencv_dnn",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "-LG:\\workspace-G\\Cpp\\multiPlayer\\multiplayer\\opencv_features2d",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "-LG:\\workspace-G\\Cpp\\multiPlayer\\multiplayer\\opencv_flann",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "-LG:\\workspace-G\\Cpp\\multiPlayer\\multiplayer\\opencv_highgui",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "-LG:\\workspace-G\\Cpp\\multiPlayer\\multiplayer\\opencv_imgcodecs",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "-LG:\\workspace-G\\Cpp\\multiPlayer\\multiplayer\\opencv_imgproc",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "-LG:\\workspace-G\\Cpp\\multiPlayer\\multiplayer\\opencv_ml",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "-LG:\\workspace-G\\Cpp\\multiPlayer\\multiplayer\\opencv_objdetect",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "-LG:\\workspace-G\\Cpp\\multiPlayer\\multiplayer\\opencv_photo",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "-LG:\\workspace-G\\Cpp\\multiPlayer\\multiplayer\\opencv_stitching",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "-LG:\\workspace-G\\Cpp\\multiPlayer\\multiplayer\\opencv_video",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "-LG:\\workspace-G\\Cpp\\multiPlayer\\multiplayer\\opencv_videoio",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "G:\\workspace-G\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\avdevice.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "G:\\workspace-G\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\avfilter.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "G:\\workspace-G\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\avformat.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "G:\\workspace-G\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\avcodec.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "G:\\workspace-G\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\swresample.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "G:\\workspace-G\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\swscale.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "G:\\workspace-G\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\avutil.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "G:\\workspace-G\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\opencv_highgui4d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "G:\\workspace-G\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\opencv_ml4d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "G:\\workspace-G\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\opencv_objdetect4d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "G:\\workspace-G\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\opencv_photo4d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "G:\\workspace-G\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\opencv_stitching4d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "G:\\workspace-G\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\opencv_video4d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "G:\\workspace-G\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\opencv_videoio4d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "G:\\workspace-G\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\bin\\opencv_videoio4d.dll",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "G:\\Qt\\6.7.0\\mingw_64\\lib\\libQt6Widgets.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "G:\\workspace-G\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\opencv_imgcodecs4d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "G:\\workspace-G\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\opencv_calib3d4d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "G:\\workspace-G\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\opencv_dnn4d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "G:\\workspace-G\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\opencv_features2d4d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "G:\\workspace-G\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\opencv_flann4d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "G:\\workspace-G\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\opencv_imgproc4d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "G:\\workspace-G\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\opencv_core4d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 15,
+				"fragment" : "G:\\Qt\\6.7.0\\mingw_64\\lib\\libQt6Gui.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 16,
+				"fragment" : "G:\\Qt\\6.7.0\\mingw_64\\lib\\libQt6Core.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 25,
+				"fragment" : "-lmpr",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 25,
+				"fragment" : "-luserenv",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 34,
+				"fragment" : "-lmingw32",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 34,
+				"fragment" : "G:\\Qt\\6.7.0\\mingw_64\\lib\\libQt6EntryPoint.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 35,
+				"fragment" : "-lshell32",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 41,
+				"fragment" : "-ld3d11",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 41,
+				"fragment" : "-ldxgi",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 41,
+				"fragment" : "-ldxguid",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 41,
+				"fragment" : "-ld3d12",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "multiplayer",
+	"nameOnDisk" : "multiplayer.exe",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				3,
+				6
+			]
+		},
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				4,
+				5,
+				7
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				8
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "output/x64Debug/multiplayer_autogen/mocs_compilation.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "mainwindow.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "mainwindow.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"path" : "mainwindow.ui",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"path" : "multiplayer_zh_CN.ts",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "output/x64Debug/multiplayer_autogen/include/ui_mainwindow.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "output/x64Debug/multiplayer_autogen/timestamp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "output/x64Debug/multiplayer_autogen/timestamp.rule",
+			"sourceGroupIndex" : 3
+		}
+	],
+	"type" : "EXECUTABLE"
+}

@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-fb27c9be9658e7a4217d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "multiplayer",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "multiplayer::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-multiplayer-Debug-5f6f634a9ef59ae32737.json",
+					"name" : "multiplayer",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "multiplayer_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-multiplayer_autogen-Debug-77e28b64670a5502c684.json",
+					"name" : "multiplayer_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "multiplayer_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-multiplayer_autogen_timestamp_deps-Debug-7f2f9e4f0acaeea76ef6.json",
+					"name" : "multiplayer_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "G:/workspace-G/Cpp/multiPlayer/multiplayer/output/x64Debug",
+		"source" : "G:/workspace-G/Cpp/multiPlayer/multiplayer"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

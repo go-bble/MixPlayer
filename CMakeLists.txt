@@ -1,0 +1,141 @@
+cmake_minimum_required(VERSION 3.5)
+
+project(multiplayer VERSION 0.1 LANGUAGES CXX)
+
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets LinguistTools)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
+
+#---
+
+set(VCPKG_ROOT "G:/workspace-G/vcpkg/vcpkg/scripts/buildsystems/vcpkg.cmake")
+set(VCPKG_INSTALLED_DIR "G:/workspace-G/vcpkg/vcpkg/installed")
+set(CMAKE_TOOLCHAIN_FILE "D:/workspace/vcpkg/vcpkg/scripts/buildsystems/vcpkg.cmake")
+
+set(CMAKE_MODULE_PATH "${VCPKG_INSTALLED_DIR}/x64-windows/share/ffmpeg")
+# list(APPEND  CMAKE_PREFIX_PATH  "G:/workspace-G/vcpkg/vcpkg/installed/x64-windows/share/ffmpeg"
+#             "G:/workspace-G/vcpkg/vcpkg/installed/x64-windows/share/opencv4"
+# )
+
+find_package(FFMPEG REQUIRED)
+if(FFMPEG_FOUND)
+    message(WARNING  "++FFMPEG_FOUND++")
+    message(WARNING "FFMPEG_INCLUDE_DIRS: ${FFMPEG_INCLUDE_DIRS}")
+    message(WARNING "FFMPEG_LIBRARIES: ${FFMPEG_LIBRARIES}")
+    message(WARNING "FFMPEG_VERSION: ${FFMPEG_VERSION}")
+else()
+    message(WARNING  "--FFMPEG_FOUND--")
+endif()
+
+set(Protobuf_DIR "${VCPKG_INSTALLED_DIR}/x64-windows/share/protobuf")
+set(quirc_DIR "${VCPKG_INSTALLED_DIR}/x64-windows/share/quirc")
+# set(tiff_DIR "${VCPKG_INSTALLED_DIR}/x64-windows/share/tiff")
+set(TIFF_INCLUDE_DIR "G:/workspace-G/vcpkg/vcpkg/packages/tiff_x64-windows/include")
+set(TIFF_LIBRARY "‪G:/workspace-G/vcpkg/vcpkg/packages/tiff_x64-windows/lib/tiff.lib")
+set(OpenCV_DIR "${VCPKG_INSTALLED_DIR}/x64-windows/share/opencv")
+find_package(OpenCV CONFIG REQUIRED)
+if(OpenCV_FOUND)
+    message(WARNING  "++OpenCV_FOUND++")
+    message(WARNING "OpenCV_INCLUDE_DIRS: ${OpenCV_INCLUDE_DIRS}")
+    # 遍历 OpenCV_LIBRARIES 列表，添加库文件路径
+    foreach(lib ${OpenCV_LIBRARIES})
+        message(WARNING "Library: ${lib}")
+        get_target_property(lib_path ${lib} LOCATION)
+        message(WARNING "Library Path: ${lib_path}")
+    endforeach()
+    message(WARNING "OpenCV_LIBRARIES: ${OpenCV_LIBRARIES}")
+    message(WARNING "OpenCV_VERSION: ${OpenCV_VERSION}")
+else()
+    message(WARNING  "--OpenCV_FOUND--")
+endif()
+
+
+#---
+
+set(TS_FILES multiplayer_zh_CN.ts)
+
+set(PROJECT_SOURCES
+        main.cpp
+        mainwindow.cpp
+        mainwindow.h
+        mainwindow.ui
+        ${TS_FILES}
+)
+
+if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
+    qt_add_executable(multiplayer
+        MANUAL_FINALIZATION
+        ${PROJECT_SOURCES}
+    )
+# Define target properties for Android with Qt 6 as:
+#    set_property(TARGET multiplayer APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
+#                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
+# For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
+
+    qt_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
+else()
+    if(ANDROID)
+        add_library(multiplayer SHARED
+            ${PROJECT_SOURCES}
+        )
+# Define properties for Android with Qt 5 after find_package() calls as:
+#    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
+    else()
+        add_executable(multiplayer
+            ${PROJECT_SOURCES}
+        )
+    endif()
+
+    qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
+endif()
+#----------
+target_include_directories(multiplayer PRIVATE
+    ${FFMPEG_INCLUDE_DIRS}
+    ${OpenCV_LIBRARY_DIRS}
+
+)
+target_link_directories(multiplayer PRIVATE
+    ${FFMPEG_LIBRARY_DIRS}
+    ${OpenCV_LIBRARIES}
+)
+target_link_libraries(multiplayer PRIVATE
+    ${FFMPEG_LIBRARIES}
+    ${OpenCV_LIBRARIES}
+    ${lib_path}
+
+)
+
+
+#-----------
+target_link_libraries(multiplayer PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+
+# Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
+# If you are developing for iOS or macOS you should consider setting an
+# explicit, fixed bundle identifier manually though.
+if(${QT_VERSION} VERSION_LESS 6.1.0)
+  set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.multiplayer)
+endif()
+set_target_properties(multiplayer PROPERTIES
+    ${BUNDLE_ID_OPTION}
+    MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
+    MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
+    MACOSX_BUNDLE TRUE
+    WIN32_EXECUTABLE TRUE
+)
+
+include(GNUInstallDirs)
+install(TARGETS multiplayer
+    BUNDLE DESTINATION .
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+)
+
+if(QT_VERSION_MAJOR EQUAL 6)
+    qt_finalize_executable(multiplayer)
+endif()

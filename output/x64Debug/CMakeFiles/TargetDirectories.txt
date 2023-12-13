@@ -1,0 +1,9 @@
+G:/workspace-G/Cpp/multiPlayer/multiplayer/output/x64Debug/CMakeFiles/multiplayer.dir
+G:/workspace-G/Cpp/multiPlayer/multiplayer/output/x64Debug/CMakeFiles/edit_cache.dir
+G:/workspace-G/Cpp/multiPlayer/multiplayer/output/x64Debug/CMakeFiles/rebuild_cache.dir
+G:/workspace-G/Cpp/multiPlayer/multiplayer/output/x64Debug/CMakeFiles/list_install_components.dir
+G:/workspace-G/Cpp/multiPlayer/multiplayer/output/x64Debug/CMakeFiles/install.dir
+G:/workspace-G/Cpp/multiPlayer/multiplayer/output/x64Debug/CMakeFiles/install/local.dir
+G:/workspace-G/Cpp/multiPlayer/multiplayer/output/x64Debug/CMakeFiles/install/strip.dir
+G:/workspace-G/Cpp/multiPlayer/multiplayer/output/x64Debug/CMakeFiles/multiplayer_autogen_timestamp_deps.dir
+G:/workspace-G/Cpp/multiPlayer/multiplayer/output/x64Debug/CMakeFiles/multiplayer_autogen.dir
