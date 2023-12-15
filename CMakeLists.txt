@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+﻿cmake_minimum_required(VERSION 3.5)
 
 project(multiplayer VERSION 0.1 LANGUAGES CXX)
 
@@ -13,10 +13,11 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets LinguistTools)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
 
 #---
-
-set(VCPKG_ROOT "G:/workspace-G/vcpkg/vcpkg/scripts/buildsystems/vcpkg.cmake")
-set(VCPKG_INSTALLED_DIR "G:/workspace-G/vcpkg/vcpkg/installed")
-set(CMAKE_TOOLCHAIN_FILE "D:/workspace/vcpkg/vcpkg/scripts/buildsystems/vcpkg.cmake")
+set(VCPKG_BIN_DIR "D:/workspace/vcpkg/vcpkg")
+#set(VCPKG_BIN_DIR "G:/workspace-G/vcpkg/vcpkg")
+set(VCPKG_ROOT "${VCPKG_BIN_DIR}/scripts/buildsystems/vcpkg.cmake")
+set(VCPKG_INSTALLED_DIR "${VCPKG_BIN_DIR}/installed")
+set(CMAKE_TOOLCHAIN_FILE "${VCPKG_BIN_DIR}/scripts/buildsystems/vcpkg.cmake")
 
 set(CMAKE_MODULE_PATH "${VCPKG_INSTALLED_DIR}/x64-windows/share/ffmpeg")
 # list(APPEND  CMAKE_PREFIX_PATH  "G:/workspace-G/vcpkg/vcpkg/installed/x64-windows/share/ffmpeg"
@@ -25,37 +26,25 @@ set(CMAKE_MODULE_PATH "${VCPKG_INSTALLED_DIR}/x64-windows/share/ffmpeg")
 
 find_package(FFMPEG REQUIRED)
 if(FFMPEG_FOUND)
-    message(WARNING  "++FFMPEG_FOUND++")
-    message(WARNING "FFMPEG_INCLUDE_DIRS: ${FFMPEG_INCLUDE_DIRS}")
-    message(WARNING "FFMPEG_LIBRARIES: ${FFMPEG_LIBRARIES}")
-    message(WARNING "FFMPEG_VERSION: ${FFMPEG_VERSION}")
+    message("++FFMPEG_FOUND++")
+    message("FFMPEG_INCLUDE_DIRS: ${FFMPEG_INCLUDE_DIRS}")
+    message("FFMPEG_LIBRARY_DIRS: ${FFMPEG_LIBRARY_DIRS}")
+    message("FFMPEG_LIBRARIES: ${FFMPEG_LIBRARIES}")
+    message("FFMPEG_VERSION: ${FFMPEG_VERSION}")
 else()
-    message(WARNING  "--FFMPEG_FOUND--")
+    message("--FFMPEG_FOUND--")
 endif()
 
-set(Protobuf_DIR "${VCPKG_INSTALLED_DIR}/x64-windows/share/protobuf")
-set(quirc_DIR "${VCPKG_INSTALLED_DIR}/x64-windows/share/quirc")
-# set(tiff_DIR "${VCPKG_INSTALLED_DIR}/x64-windows/share/tiff")
-set(TIFF_INCLUDE_DIR "G:/workspace-G/vcpkg/vcpkg/packages/tiff_x64-windows/include")
-set(TIFF_LIBRARY "‪G:/workspace-G/vcpkg/vcpkg/packages/tiff_x64-windows/lib/tiff.lib")
-set(OpenCV_DIR "${VCPKG_INSTALLED_DIR}/x64-windows/share/opencv")
-find_package(OpenCV CONFIG REQUIRED)
-if(OpenCV_FOUND)
-    message(WARNING  "++OpenCV_FOUND++")
-    message(WARNING "OpenCV_INCLUDE_DIRS: ${OpenCV_INCLUDE_DIRS}")
-    # 遍历 OpenCV_LIBRARIES 列表，添加库文件路径
-    foreach(lib ${OpenCV_LIBRARIES})
-        message(WARNING "Library: ${lib}")
-        get_target_property(lib_path ${lib} LOCATION)
-        message(WARNING "Library Path: ${lib_path}")
-    endforeach()
-    message(WARNING "OpenCV_LIBRARIES: ${OpenCV_LIBRARIES}")
-    message(WARNING "OpenCV_VERSION: ${OpenCV_VERSION}")
-else()
-    message(WARNING  "--OpenCV_FOUND--")
-endif()
-
-
+set(VCPKG_LIBRARY_DIRS
+    "D:/workspace/vcpkg/vcpkg/installed/x64-windows/lib"
+    "D:/workspace/vcpkg/vcpkg/installed/x64-windows/debug/lib"
+)
+set(OpenCV_LIBRARIES)
+foreach(lib_dir_opencv ${VCPKG_LIBRARY_DIRS})
+    file(GLOB opencv_libs "${lib_dir_opencv}/opencv*.lib")
+    list(APPEND OpenCV_LIBRARIES ${opencv_libs})
+endforeach()
+#message("OpenCV libraries: ${OpenCV_LIBRARIES}")
 #---
 
 set(TS_FILES multiplayer_zh_CN.ts)
@@ -97,12 +86,9 @@ endif()
 #----------
 target_include_directories(multiplayer PRIVATE
     ${FFMPEG_INCLUDE_DIRS}
-    ${OpenCV_LIBRARY_DIRS}
-
 )
 target_link_directories(multiplayer PRIVATE
     ${FFMPEG_LIBRARY_DIRS}
-    ${OpenCV_LIBRARIES}
 )
 target_link_libraries(multiplayer PRIVATE
     ${FFMPEG_LIBRARIES}
