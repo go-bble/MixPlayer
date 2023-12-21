@@ -51,6 +51,50 @@ MainWindow::MainWindow(QWidget *parent)
             cv::waitKey(0);
         }
 
+
+
+    }
+
+    // 创建 VideoCapture 对象，参数为摄像头索引（通常是 0）或视频文件路径
+    cv::VideoCapture cap(1);  // 如果要打开视频文件，可以传递文件路径
+
+    // 检查摄像头是否成功打开
+    if (!cap.isOpened()) {
+        std::cerr << "Error: Could not open camera." << std::endl;
+    }else{
+        // 获取摄像头的基本信息
+        double fps = cap.get(cv::CAP_PROP_FPS);
+        int width = static_cast<int>(cap.get(cv::CAP_PROP_FRAME_WIDTH));
+        int height = static_cast<int>(cap.get(cv::CAP_PROP_FRAME_HEIGHT));
+
+        std::cout << "FPS: " << fps << std::endl;
+        std::cout << "Resolution: " << width << " x " << height << std::endl;
+
+        // 逐帧读取摄像头
+        while (true) {
+            // 读取一帧
+            cv::Mat frame;
+            cap >> frame;
+
+            // 如果摄像头读取失败，退出循环
+            if (frame.empty()) {
+                std::cerr << "Error: Could not read frame." << std::endl;
+                break;
+            }
+
+            // 在这里添加对每一帧的处理
+
+            // 显示当前帧
+            cv::imshow("Camera Feed", frame);
+
+            // 按下 'q' 键退出循环
+            if (cv::waitKey(30) == 'q') {
+                break;
+            }
+        }
+
+        // 关闭摄像头
+        cap.release();
     }
 
 
