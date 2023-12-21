@@ -15,8 +15,8 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
 #---
 
 
-# set(VCPKG_BIN_DIR "D:/workspace/vcpkg/vcpkg")
-set(VCPKG_BIN_DIR "G:/workspace-G/vcpkg/vcpkg")
+ set(VCPKG_BIN_DIR "D:/workspace/vcpkg/vcpkg")  #test
+#set(VCPKG_BIN_DIR "G:/workspace-G/vcpkg/vcpkg") #home
 set(VCPKG_ROOT "${VCPKG_BIN_DIR}/scripts/buildsystems/vcpkg.cmake")
 set(VCPKG_INSTALLED_DIR "${VCPKG_BIN_DIR}/installed")
 set(CMAKE_TOOLCHAIN_FILE "${VCPKG_BIN_DIR}/scripts/buildsystems/vcpkg.cmake")
@@ -39,7 +39,7 @@ endif()
 
 set(VCPKG_LIBRARY_DIRS
     "${VCPKG_INSTALLED_DIR}/x64-windows/lib"
-    "${VCPKG_INSTALLED_DIR}/x64-windows/debug/lib"
+#    "${VCPKG_INSTALLED_DIR}/x64-windows/debug/lib"
 )
 set(OpenCV_LIBRARIES)
 foreach(lib_dir_opencv ${VCPKG_LIBRARY_DIRS})
@@ -48,6 +48,18 @@ foreach(lib_dir_opencv ${VCPKG_LIBRARY_DIRS})
 endforeach()
 message("OpenCV libraries: ${OpenCV_LIBRARIES}")
 message("QT_DIR libraries: ${QT_DIR}")
+
+
+set(OpenVDB_INCLUDE_DIRS "C:/Program Files/OpenVDB/include")
+set(OpenVDB_LIBRARIES)
+foreach(lib_dir_openvdb "C:/Program Files/OpenVDB/lib")
+    file(GLOB openvdb_libs "${lib_dir_openvdb}/openvd*.lib")
+    list(APPEND OpenVDB_LIBRARIES ${openvdb_libs})
+endforeach()
+message("OpenVDB libraries: ${OpenVDB_LIBRARIES}")
+
+
+
 #---
 
 set(TS_FILES mixplayer_zh_CN.ts)
@@ -89,6 +101,7 @@ endif()
 #----------
 target_include_directories(mixplayer PRIVATE
     ${FFMPEG_INCLUDE_DIRS}
+    ${OpenVDB_INCLUDE_DIRS}
 )
 target_link_directories(mixplayer PRIVATE
     ${FFMPEG_LIBRARY_DIRS}
@@ -96,6 +109,7 @@ target_link_directories(mixplayer PRIVATE
 target_link_libraries(mixplayer PRIVATE
     ${FFMPEG_LIBRARIES}
     ${OpenCV_LIBRARIES}
+    ${OpenVDB_LIBRARIES}
     ${lib_path}
 
 )
