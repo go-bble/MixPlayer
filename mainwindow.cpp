@@ -2,12 +2,15 @@
 #include "./ui_mainwindow.h"
 #include "QDebug"
 #include <iostream>
+#include <fstream>
 extern "C"{
     #include "libavformat/avformat.h"
 }
 #include "opencv2/core/core.hpp"
 #include <opencv2/opencv.hpp>
 #include <QFileDialog>
+
+#include <json/json.h>
 
 #ifdef foreach
 #undef foreach
@@ -33,6 +36,52 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     qDebug()<<avformat_configuration();
     std::cout << "OpenCV Version: " << CV_VERSION << std::endl;
+
+    // 创建 JSON 对象
+    Json::Value root;
+
+    // 添加国家
+    root["country"] = "中国";
+
+    // 添加省级信息
+    Json::Value guangdong;
+    guangdong["province"] = "广东省";
+
+    // 添加市级信息
+    Json::Value guangzhou;
+    guangzhou["city"] = "广州市";
+
+    // 添加区级信息
+    Json::Value tianhe;
+    tianhe["district"] = "天河区";
+
+    // 添加村级信息
+    Json::Value village;
+    village["village"] = "村名";
+
+    // 将各级信息组织起来
+    tianhe["villages"].append(village);
+    guangzhou["districts"].append(tianhe);
+    guangdong["cities"].append(guangzhou);
+
+    // 将省级信息添加到根节点
+    root["provinces"].append(guangdong);
+
+    // 将 JSON 对象写入文件
+    std::ofstream outfile("geography.json");
+
+    // 使用 Json::StreamWriterBuilder 配置 Json::StreamWriter
+    Json::StreamWriterBuilder writerBuilder;
+    writerBuilder["indentation"] = "\t";  // 可选，添加缩进以提高可读性
+
+    // 将 JSON 对象写入文件
+    std::unique_ptr<Json::StreamWriter> writer(writerBuilder.newStreamWriter());
+    writer->write(root, &outfile);
+
+    outfile.close();
+
+    std::cout << "JSON 文件已创建成功。" << std::endl;
+
 
     QString filePath = QFileDialog::getOpenFileName(nullptr, "Open Image File", "", "Images (*.png *.jpg *.bmp)");
 
